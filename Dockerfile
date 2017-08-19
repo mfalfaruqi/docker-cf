@@ -67,7 +67,7 @@ RUN cd ~; git clone https://github.com/phalcon/cphalcon -b 2.1.x --single-branch
 RUN echo "extension=phalcon.so" >> /etc/php/5.6/mods-available/phalcon.ini; phpenmod phalcon
 
 # Install Mongo DB extension
-RUN cd ~; git clone https://github.com/mongodb/mongo-php-driver.git; cd mongo-php-driver; git submodule sync && git submodule update --init; phpize; ./configure; make all -j 5; make install; rm -rf ~/mongo-php-driver
+RUN cd ~; git clone https://github.com/mongodb/mongo-php-driver.git; cd mongo-php-driver; git submodule sync && git submodule update --init; phpize; ./configure; make all -j 5; make install
 RUN sh -c "echo 'extension=mongodb.so' > /etc/php/5.6/mods-available/mongodb.ini"
 RUN echo "extension=mongodb.so" >> /etc/php/5.6/fpm/php.ini; phpenmod mongodb
 
