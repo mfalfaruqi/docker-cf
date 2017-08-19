@@ -1,0 +1,14 @@
+version: '2'
+services:
+  cf-front:
+    build: .
+    ports:
+      - "80:80"
+      - "443:443"
+      - "3000:3000"
+      - "9090:8090"
+      - "8983:8983"
+    volumes:
+      - ./www:/html
+      - ./sites:/etc/nginx/conf.d
+      - ./logs:/var/log/supervisor
