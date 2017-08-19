@@ -1,2 +1,4 @@
 www/*
-!www/default
+!www/default/
+sites/*
+sites/default.vhost

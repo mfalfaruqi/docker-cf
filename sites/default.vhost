@@ -1,6 +1,6 @@
 server {
   server_name default;
-  root        /html/cf1;
+  root        /html/default;
   index       index.php;
 
   client_max_body_size 100M;
