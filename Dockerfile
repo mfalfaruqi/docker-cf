@@ -63,7 +63,7 @@ RUN cd ~; wget https://github.com/phpredis/phpredis/archive/master.zip -O phpred
 RUN touch /etc/php/5.6/mods-available/redis.ini; echo extension=redis.so > /etc/php/5.6/mods-available/redis.ini; phpenmod redis
 
 # Install cphalcon extension
-RUN cd ~; git clone https://github.com/phalcon/cphalcon -b 2.1.x --single-branch; cd ~/cphalcon/build; ./install
+RUN cd ~; git clone https://github.com/phalcon/cphalcon; cd ~/cphalcon/build; ./install
 RUN echo "extension=phalcon.so" >> /etc/php/5.6/mods-available/phalcon.ini; phpenmod phalcon
 
 # Install Mongo DB extension
